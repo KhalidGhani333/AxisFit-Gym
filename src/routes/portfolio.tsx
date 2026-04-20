@@ -1,28 +1,34 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { TopBar } from "@/components/site/TopBar";
+import { useReveal } from "@/hooks/use-reveal";
 import { Navbar } from "@/components/site/Navbar";
+import { Gallery } from "@/components/site/Gallery";
 import { Footer } from "@/components/site/Footer";
-import { Portfolio } from "@/components/site/Portfolio";
-import { CaseStudies } from "@/components/site/CaseStudies";
-import { PageHero } from "./about";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
-      { title: "Portfolio — Consulting." },
-      { name: "description", content: "Featured case studies across construction, finance, healthcare, and manufacturing." },
-      { property: "og:title", content: "Portfolio — Consulting." },
-      { property: "og:description", content: "Featured case studies across our most ambitious engagements." },
+      { title: "Gallery — ForgeFit London | Training in East London" },
+      { name: "description", content: "A look inside the ForgeFit training studios in Shoreditch & Bethnal Green." },
+      { property: "og:title", content: "Gallery — ForgeFit London" },
+      { property: "og:description", content: "Real training, real clients, real results." },
     ],
   }),
-  component: () => (
-    <div className="min-h-screen bg-background">
-      <TopBar />
+  component: GalleryPage,
+});
+
+function GalleryPage() {
+  useReveal();
+  return (
+    <div className="bg-forge-bg min-h-screen">
       <Navbar />
-      <PageHero title="Our Portfolio" crumb="Portfolio" />
-      <Portfolio />
-      <CaseStudies />
+      <main className="pt-10">
+        <div className="container mx-auto max-w-7xl px-6 py-10 text-center">
+          <p className="label-red mb-4">Real Training</p>
+          <h1 className="font-display text-5xl md:text-7xl text-white">The Gallery</h1>
+        </div>
+        <Gallery />
+      </main>
       <Footer />
     </div>
-  ),
-});
+  );
+}

@@ -1,68 +1,85 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { TopBar } from "@/components/site/TopBar";
+import { MapPin, Phone, Mail, Instagram } from "lucide-react";
+import { useReveal } from "@/hooks/use-reveal";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
-import { PageHero } from "./about";
-import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Consulting." },
-      { name: "description", content: "Book a free 30-minute strategy call. No slides, no sales — just a sharp diagnostic." },
-      { property: "og:title", content: "Contact — Consulting." },
-      { property: "og:description", content: "Book a free 30-minute strategy call." },
+      { title: "Book a Free Consultation — ForgeFit London | Ryan Forge PT" },
+      { name: "description", content: "Get in touch to book your complimentary consultation with elite London personal trainer Ryan Forge. Shoreditch · Hoxton · Bethnal Green." },
+      { property: "og:title", content: "Book Your Free Consultation — ForgeFit London" },
+      { property: "og:description", content: "Start your transformation today. First consultation is complimentary." },
     ],
   }),
   component: ContactPage,
 });
 
 function ContactPage() {
+  useReveal();
   return (
-    <div className="min-h-screen bg-background">
-      <TopBar />
+    <div className="bg-forge-bg min-h-screen">
       <Navbar />
-      <PageHero title="Contact Us" crumb="Contact" />
-      <section className="py-24 md:py-32">
-        <div className="container mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-16">
-          <div>
-            <div className="label-red">Get In Touch</div>
-            <h2 className="mt-5 text-4xl md:text-5xl font-extrabold">Let's start a conversation</h2>
-            <p className="mt-5 text-body">
-              Tell us about your goals. We'll respond within one business day with a recommended next step.
-            </p>
-            <div className="mt-10 space-y-6">
+      <main className="py-24 md:py-32">
+        <div className="container mx-auto max-w-7xl px-6">
+          <div className="reveal-left text-center mb-16">
+            <p className="label-red mb-4">Get In Touch</p>
+            <h1 className="watermark-text">Book a Session</h1>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <form
+              onSubmit={(e) => e.preventDefault()}
+              className="reveal bg-forge-card border border-forge-line p-8 md:p-10 space-y-5"
+            >
+              <div>
+                <label className="text-[11px] uppercase tracking-[0.18em] text-[#aaa] block mb-2">Full Name</label>
+                <input className="w-full bg-transparent border border-white/20 px-4 py-3 text-white focus:border-forge-red outline-none" />
+              </div>
+              <div>
+                <label className="text-[11px] uppercase tracking-[0.18em] text-[#aaa] block mb-2">Email</label>
+                <input type="email" className="w-full bg-transparent border border-white/20 px-4 py-3 text-white focus:border-forge-red outline-none" />
+              </div>
+              <div>
+                <label className="text-[11px] uppercase tracking-[0.18em] text-[#aaa] block mb-2">Mobile</label>
+                <input className="w-full bg-transparent border border-white/20 px-4 py-3 text-white focus:border-forge-red outline-none" placeholder="07xxx xxxxxx" />
+              </div>
+              <div>
+                <label className="text-[11px] uppercase tracking-[0.18em] text-[#aaa] block mb-2">Tell me about your goals</label>
+                <textarea rows={5} className="w-full bg-transparent border border-white/20 px-4 py-3 text-white focus:border-forge-red outline-none resize-none" />
+              </div>
+              <button type="submit" className="btn-red w-full">Request Free Consultation</button>
+              <p className="text-[12px] text-[#666] text-center">DBS-checked · Fully insured · GDPR compliant</p>
+            </form>
+
+            <div className="reveal-right space-y-8">
               {[
-                { Icon: Phone, label: "Phone", value: "+564 7885 3222" },
-                { Icon: Mail, label: "Email", value: "hello@consulting.com" },
-                { Icon: MapPin, label: "Office", value: "12 Market Street, Suite 400, NY 10013" },
-              ].map((it) => (
-                <div key={it.label} className="flex items-start gap-4">
-                  <div className="h-12 w-12 grid place-items-center bg-red-brand/10 text-red-brand shrink-0">
-                    <it.Icon className="h-5 w-5" />
+                { Icon: MapPin, title: "Studio Location", lines: ["Unit 4, Hoxton Square Studios", "Hoxton Square, London N1 6NU"] },
+                { Icon: Phone, title: "Call or Text", lines: ["+44 (0)20 7946 0392", "+44 (0)7700 900 174"] },
+                { Icon: Mail, title: "Email", lines: ["ryan@forgefit.co.uk", "bookings@forgefit.co.uk"] },
+                { Icon: Instagram, title: "Instagram", lines: ["@ryanforge_pt"] },
+              ].map(({ Icon, title, lines }) => (
+                <div key={title} className="flex items-start gap-5">
+                  <div className="h-[52px] w-[52px] rounded-full bg-forge-red grid place-items-center shrink-0">
+                    <Icon className="h-5 w-5 text-white" />
                   </div>
                   <div>
-                    <div className="text-xs uppercase tracking-[0.18em] font-bold text-body">{it.label}</div>
-                    <div className="mt-1 font-semibold text-navy">{it.value}</div>
+                    <h3 className="font-display text-2xl text-white">{title}</h3>
+                    {lines.map((l) => <p key={l} className="text-[#aaa] mt-1">{l}</p>)}
                   </div>
                 </div>
               ))}
+              <div className="border border-forge-line p-6 mt-6">
+                <p className="text-[11px] uppercase tracking-[0.18em] text-forge-red mb-2">Areas Served</p>
+                <p className="text-white text-sm leading-relaxed">
+                  Shoreditch · Hoxton · Hackney · Bethnal Green · City of London · Clerkenwell · Dalston
+                </p>
+              </div>
             </div>
           </div>
-
-          <form onSubmit={(e) => e.preventDefault()} className="bg-light-gray p-8 md:p-12 space-y-5">
-            <div className="grid sm:grid-cols-2 gap-5">
-              <input required placeholder="Your Name" className="bg-white border border-border px-4 py-3.5 text-sm focus:outline-none focus:border-red-brand" />
-              <input required type="email" placeholder="Your Email" className="bg-white border border-border px-4 py-3.5 text-sm focus:outline-none focus:border-red-brand" />
-            </div>
-            <input placeholder="Subject" className="w-full bg-white border border-border px-4 py-3.5 text-sm focus:outline-none focus:border-red-brand" />
-            <textarea required rows={6} placeholder="How can we help?" className="w-full bg-white border border-border px-4 py-3.5 text-sm focus:outline-none focus:border-red-brand resize-none" />
-            <button type="submit" className="btn-red">
-              Send Message <ArrowRight className="h-4 w-4" />
-            </button>
-          </form>
         </div>
-      </section>
+      </main>
       <Footer />
     </div>
   );

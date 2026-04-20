@@ -1,91 +1,87 @@
-import { Twitter, Facebook, Globe, Instagram } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { Instagram, Music2, Youtube, Facebook } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-[#111827] text-white/70">
-      <div className="container mx-auto max-w-7xl px-6 py-20 grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-        <div>
-          <div className="text-2xl font-extrabold text-white">
-            Consulting<span className="text-red-brand">.</span>
-          </div>
-          <p className="mt-5 text-sm leading-relaxed">
-            Receive updates and latest news direct from us. Simply enter your email below.
-          </p>
-          <div className="mt-6 space-y-1.5 text-sm">
-            <div>
-              <span className="text-red-brand font-bold">+564 7885 3222</span>
-            </div>
-            <div>hello@consulting.com</div>
-          </div>
-        </div>
-
-        <div>
-          <h4 className="text-white text-sm font-bold tracking-[0.2em] uppercase mb-6">Location</h4>
-          <ul className="space-y-3 text-sm">
-            {["Advanced", "Management", "Corporate", "Customer", "Information"].map((i) => (
-              <li key={i}>
-                <a href="#" className="hover:text-red-brand transition-colors">
-                  {i}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="text-white text-sm font-bold tracking-[0.2em] uppercase mb-6">Explore</h4>
-          <ul className="space-y-3 text-sm">
-            {["Cookies", "About", "Privacy Policy", "Properties", "Licenses"].map((i) => (
-              <li key={i}>
-                <a href="#" className="hover:text-red-brand transition-colors">
-                  {i}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="text-white text-sm font-bold tracking-[0.2em] uppercase mb-6">Newsletter</h4>
-          <p className="text-sm mb-4">Subscribe now to get daily updates</p>
-          <form
-            onSubmit={(e) => e.preventDefault()}
-            className="flex flex-col gap-3"
-          >
-            <input
-              type="email"
-              required
-              placeholder="Your email"
-              className="bg-white/5 border border-white/10 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-red-brand"
-            />
-            <button type="submit" className="btn-red w-full">
-              Sign Up
-            </button>
-          </form>
-        </div>
-      </div>
-
-      <div className="border-t border-white/10">
-        <div className="container mx-auto max-w-7xl px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
+    <footer className="bg-[#050505] pt-20 pb-8 border-t border-white/[0.06]">
+      <div className="container mx-auto max-w-7xl px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
-            Powered By{" "}
-            <a
-              href="https://axistechgroup.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-red-brand hover:underline font-semibold"
-            >
-              AxisTechGroup
-            </a>
+            <Link to="/" className="flex items-end gap-1 mb-5">
+              <span className="font-display text-3xl text-white leading-none">FORGEFIT</span>
+              <span className="h-2 w-2 bg-forge-red mb-2" />
+            </Link>
+            <p className="text-[#999] text-sm leading-relaxed">
+              Elite Personal Training in East London. Trusted by 400+ clients since 2014.
+            </p>
+            <div className="mt-6 flex items-center gap-3">
+              {[Instagram, Music2, Youtube, Facebook].map((Icon, i) => (
+                <a
+                  key={i}
+                  href="#"
+                  aria-label={`social-${i}`}
+                  className="h-9 w-9 rounded-full border border-white/20 grid place-items-center text-white transition-colors hover:bg-forge-red hover:border-forge-red"
+                >
+                  <Icon className="h-4 w-4" />
+                </a>
+              ))}
+            </div>
+            <p className="mt-4 text-[12px] text-[#666]">@ryanforge_pt</p>
           </div>
-          <div className="flex items-center gap-2">
-            {[Twitter, Facebook, Globe, Instagram].map((Icon, i) => (
-              <a
-                key={i}
-                href="#"
-                aria-label={`social-${i}`}
-                className="h-9 w-9 grid place-items-center border border-white/10 hover:bg-red-brand hover:border-red-brand transition-colors"
-              >
+
+          <div>
+            <h4 className="font-display text-lg text-white mb-5 tracking-wider">Training</h4>
+            <ul className="space-y-3 text-sm text-[#aaa]">
+              {["Personal Training", "Group Sessions", "Online Coaching", "Transformation Packages", "Free Consultation"].map(
+                (l) => (
+                  <li key={l}>
+                    <a href="#" className="hover:text-forge-red transition-colors">
+                      {l}
+                    </a>
+                  </li>
+                ),
+              )}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-display text-lg text-white mb-5 tracking-wider">Company</h4>
+            <ul className="space-y-3 text-sm text-[#aaa]">
+              {["About Ryan", "Testimonials", "Blog & Articles", "FAQs", "Privacy Policy (GDPR)"].map((l) => (
+                <li key={l}>
+                  <a href="#" className="hover:text-forge-red transition-colors">
+                    {l}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-display text-lg text-white mb-5 tracking-wider">Stay in Touch</h4>
+            <p className="text-sm text-[#aaa] mb-4">Get weekly training tips and exclusive offers.</p>
+            <form className="flex flex-col gap-3" onSubmit={(e) => e.preventDefault()}>
+              <input
+                type="email"
+                placeholder="your@email.co.uk"
+                className="bg-transparent border border-white/30 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-forge-red outline-none transition-colors"
+              />
+              <button type="submit" className="btn-red">
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div className="mt-16 h-px bg-forge-red/60" />
+        <div className="mt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-[12px] text-[#666]">
+          <p>
+            © 2026 ForgeFit London · Ryan Forge Personal Training Ltd · Registered in England &amp; Wales No. 12458763 ·
+            VAT No. GB 345 2891 04
+          </p>
+          <div className="flex items-center gap-3">
+            {[Instagram, Music2, Youtube, Facebook].map((Icon, i) => (
+              <a key={i} href="#" aria-label={`f-social-${i}`} className="text-[#666] hover:text-forge-red transition-colors">
                 <Icon className="h-4 w-4" />
               </a>
             ))}

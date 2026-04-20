@@ -1,51 +1,46 @@
-import { Play, Check } from "lucide-react";
-import poster from "@/assets/video-poster.jpg";
-
-const points = [
-  "15+ years of industry experience",
-  "Proven methodology and frameworks",
-  "Dedicated team of experts",
-  "Results-driven approach",
-];
+import { Play, MapPin, Phone, Mail } from "lucide-react";
+import videoImg from "@/assets/forge-video.jpg";
 
 export function VideoSection() {
   return (
-    <section className="py-24 md:py-32 bg-white">
-      <div className="container mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-16 items-center">
-        <div className="relative group cursor-pointer overflow-hidden rounded-sm">
-          <img src={poster} alt="Watch our story" loading="lazy" className="w-full h-[480px] object-cover transition-transform duration-700 group-hover:scale-105" />
-          <div className="absolute inset-0 bg-navy/30 group-hover:bg-navy/40 transition-colors" />
-          <div className="absolute inset-0 grid place-items-center">
-            <div className="relative">
-              <div className="absolute inset-0 rounded-full bg-white/30 animate-ping" />
-              <div className="relative h-20 w-20 rounded-full bg-white grid place-items-center shadow-2xl">
-                <Play className="h-7 w-7 text-red-brand fill-red-brand ml-1" />
+    <>
+      <section className="relative w-full h-[55vh] min-h-[420px] overflow-hidden">
+        <img src={videoImg} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-forge-red/35" />
+        <div className="absolute inset-0 bg-black/30" />
+        <div className="relative h-full grid place-items-center">
+          <button
+            aria-label="Play"
+            className="play-pulse h-[76px] w-[76px] rounded-full border-2 border-white grid place-items-center bg-white/5 backdrop-blur-sm hover:scale-110 transition-transform duration-300"
+          >
+            <Play className="h-7 w-7 text-white fill-white ml-1" />
+          </button>
+        </div>
+      </section>
+
+      <section className="bg-[#0f0f0f] py-14 border-t border-white/[0.06]">
+        <div className="container mx-auto max-w-7xl px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            { Icon: MapPin, title: "Location", lines: ["Unit 4, Hoxton Square Studios", "Hoxton Square, London N1 6NU"] },
+            { Icon: Phone, title: "Phone", lines: ["+44 (0)20 7946 0392", "+44 (0)7700 900 174"] },
+            { Icon: Mail, title: "Email", lines: ["ryan@forgefit.co.uk", "bookings@forgefit.co.uk"] },
+          ].map(({ Icon, title, lines }, i) => (
+            <div key={i} className="reveal flex items-start gap-5" style={{ ["--reveal-delay" as string]: `${i * 120}ms` }}>
+              <div className="h-[52px] w-[52px] rounded-full bg-forge-red grid place-items-center shrink-0">
+                <Icon className="h-5 w-5 text-white" />
+              </div>
+              <div>
+                <h4 className="font-display text-xl text-white">{title}</h4>
+                {lines.map((l) => (
+                  <p key={l} className="text-[#aaa] text-sm mt-1">
+                    {l}
+                  </p>
+                ))}
               </div>
             </div>
-          </div>
+          ))}
         </div>
-
-        <div>
-          <div className="label-red">Why Choose Us</div>
-          <h2 className="mt-5 text-4xl md:text-5xl font-extrabold leading-tight">
-            See How We Transform Businesses
-          </h2>
-          <p className="mt-5 text-body leading-relaxed">
-            Our consultants combine deep industry expertise with a proven methodology — delivering
-            sustainable transformation that lasts long after the engagement ends.
-          </p>
-          <ul className="mt-8 space-y-4">
-            {points.map((p) => (
-              <li key={p} className="flex items-start gap-4">
-                <span className="mt-0.5 h-7 w-7 shrink-0 rounded-full bg-red-brand/10 grid place-items-center">
-                  <Check className="h-4 w-4 text-red-brand" strokeWidth={3} />
-                </span>
-                <span className="text-navy font-semibold">{p}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

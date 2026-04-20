@@ -1,56 +1,47 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { TopBar } from "@/components/site/TopBar";
+import { useReveal } from "@/hooks/use-reveal";
 import { Navbar } from "@/components/site/Navbar";
-import { HeroSlider } from "@/components/site/HeroSlider";
-import { Services } from "@/components/site/Services";
-import { AboutSplit } from "@/components/site/AboutSplit";
-import { VideoSection } from "@/components/site/VideoSection";
-import { Portfolio } from "@/components/site/Portfolio";
-import { CaseStudies } from "@/components/site/CaseStudies";
-import { CtaBanner } from "@/components/site/CtaBanner";
-import { Testimonials } from "@/components/site/Testimonials";
-import { Stats } from "@/components/site/Stats";
-import { Team } from "@/components/site/Team";
+import { Hero } from "@/components/site/Hero";
+import { TrainingSplit } from "@/components/site/TrainingSplit";
+import { WhatIOffer } from "@/components/site/WhatIOffer";
+import { Gallery } from "@/components/site/Gallery";
 import { Pricing } from "@/components/site/Pricing";
-import { Faq } from "@/components/site/Faq";
-import { RedCta } from "@/components/site/RedCta";
+import { About } from "@/components/site/About";
 import { Blog } from "@/components/site/Blog";
-import { Partners } from "@/components/site/Partners";
+import { VideoSection } from "@/components/site/VideoSection";
 import { Footer } from "@/components/site/Footer";
+import heroImg from "@/assets/forge-hero.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Consulting. — Strategy that ships. Growth that compounds." },
-      { name: "description", content: "Senior advisors embedded with your leadership. 15+ years helping ambitious companies turn strategy into measurable, durable growth." },
-      { property: "og:title", content: "Consulting. — Strategy that ships." },
-      { property: "og:description", content: "Senior advisors embedded with your leadership. 15+ years helping ambitious companies turn strategy into durable growth." },
+      { title: "ForgeFit London — Elite Personal Trainer in Shoreditch | Ryan Forge" },
+      { name: "description", content: "Ryan Forge — CIMSPA accredited elite personal trainer in East London. 1-to-1 PT, transformation programmes & group training in Shoreditch, Hoxton & Bethnal Green." },
+      { property: "og:title", content: "ForgeFit London — Elite Personal Trainer" },
+      { property: "og:description", content: "Bespoke personal training in East London. 400+ clients, 11 years experience, results guaranteed." },
+      { property: "og:image", content: heroImg },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: heroImg },
     ],
   }),
-  component: Index,
+  component: HomePage,
 });
 
-function Index() {
+function HomePage() {
+  useReveal();
   return (
-    <div className="min-h-screen bg-background">
-      <TopBar />
+    <div className="bg-forge-bg min-h-screen">
       <Navbar />
       <main>
-        <HeroSlider />
-        <Services />
-        <AboutSplit />
-        <VideoSection />
-        <Portfolio />
-        <CaseStudies />
-        <CtaBanner />
-        <Testimonials />
-        <Stats />
-        <Team />
+        <Hero />
+        <TrainingSplit />
+        <WhatIOffer />
+        <Gallery />
         <Pricing />
-        <Faq />
-        <RedCta />
+        <About />
         <Blog />
-        <Partners />
+        <VideoSection />
       </main>
       <Footer />
     </div>

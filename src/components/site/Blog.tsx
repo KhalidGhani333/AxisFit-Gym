@@ -1,42 +1,54 @@
-import { ArrowRight } from "lucide-react";
-import b1 from "@/assets/blog-1.jpg";
-import b2 from "@/assets/blog-2.jpg";
+import blog1 from "@/assets/forge-blog-1.jpg";
+import blog2 from "@/assets/forge-blog-2.jpg";
 
 const posts = [
   {
-    img: b1, date: "October 27, 2032", author: "Admin",
-    title: "16 Easy Ideas to Use in Everyday Strategy Work",
-    desc: "Small habits compound. Here are sixteen we've seen produce outsized results in real engagements.",
+    img: blog1,
+    tag: "Gym & Fitness",
+    title: "Why Most Londoners Plateau After 3 Months — And How to Break Through",
+    meta: "By Ryan Forge · 12 March 2026",
   },
   {
-    img: b2, date: "October 14, 2032", author: "Admin",
-    title: "Why Most Transformations Stall in Month Three",
-    desc: "The data is clear: 70% of corporate transformations lose momentum at the same milestone. Here's how to avoid it.",
+    img: blog2,
+    tag: "Nutrition",
+    title: "The Truth About Protein for Fat Loss: How Much Do You Actually Need?",
+    meta: "By Ryan Forge · 28 February 2026",
   },
 ];
 
 export function Blog() {
   return (
-    <section className="py-24 md:py-32 bg-light-gray">
+    <section id="blog" className="bg-forge-bg py-28 md:py-36">
       <div className="container mx-auto max-w-7xl px-6">
-        <div className="max-w-2xl">
-          <div className="label-red">Recent News of Us</div>
-          <h2 className="mt-5 text-4xl md:text-5xl font-extrabold">Our Recent Blog</h2>
+        <div className="reveal-left text-center mb-20">
+          <p className="label-red mb-4">Insights</p>
+          <h2 className="watermark-text">From the Blog</h2>
         </div>
 
-        <div className="mt-14 grid gap-8 md:grid-cols-2">
-          {posts.map((p) => (
-            <article key={p.title} className="group bg-white shadow-card hover:shadow-card-hover transition-all duration-500 overflow-hidden">
-              <div className="overflow-hidden">
-                <img src={p.img} alt={p.title} loading="lazy" className="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-105" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {posts.map((p, i) => (
+            <article
+              key={i}
+              className="reveal group bg-forge-card border border-forge-line transition-all duration-300 hover:-translate-y-2 relative overflow-hidden"
+              style={{ ["--reveal-delay" as string]: `${i * 150}ms` }}
+            >
+              <div className="absolute top-0 left-0 right-0 h-[3px] bg-forge-red scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 z-10" />
+              <div className="aspect-[16/10] overflow-hidden">
+                <img
+                  src={p.img}
+                  alt={p.title}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
               </div>
               <div className="p-8">
-                <div className="text-xs text-body">By <span className="font-semibold text-navy">{p.author}</span> · {p.date}</div>
-                <h3 className="mt-3 text-2xl font-bold leading-snug group-hover:text-red-brand transition-colors">{p.title}</h3>
-                <p className="mt-4 text-sm text-body">{p.desc}</p>
-                <a href="#" className="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-red-brand">
-                  Read More <ArrowRight className="h-3.5 w-3.5" />
-                </a>
+                <span className="inline-block px-3 py-1 bg-forge-red text-white text-[11px] font-bold uppercase tracking-[0.18em]">
+                  {p.tag}
+                </span>
+                <h3 className="mt-5 font-display text-2xl md:text-3xl text-white group-hover:text-forge-red transition-colors duration-300 leading-tight">
+                  {p.title}
+                </h3>
+                <p className="mt-4 text-[13px] text-[#888]">{p.meta}</p>
               </div>
             </article>
           ))}

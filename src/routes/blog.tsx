@@ -1,26 +1,30 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { TopBar } from "@/components/site/TopBar";
+import { useReveal } from "@/hooks/use-reveal";
 import { Navbar } from "@/components/site/Navbar";
-import { Footer } from "@/components/site/Footer";
 import { Blog } from "@/components/site/Blog";
-import { PageHero } from "./about";
+import { Footer } from "@/components/site/Footer";
 
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
-      { title: "Blog — Consulting." },
-      { name: "description", content: "Field notes from real engagements: the patterns, frameworks, and small habits that compound results." },
-      { property: "og:title", content: "Blog — Consulting." },
-      { property: "og:description", content: "Field notes from real engagements." },
+      { title: "Training & Nutrition Articles — ForgeFit London Blog" },
+      { name: "description", content: "Evidence-based fitness and nutrition insights from CIMSPA-accredited trainer Ryan Forge." },
+      { property: "og:title", content: "ForgeFit Blog — Training & Nutrition" },
+      { property: "og:description", content: "Real talk on training, nutrition, and getting results in London." },
     ],
   }),
-  component: () => (
-    <div className="min-h-screen bg-background">
-      <TopBar />
+  component: BlogPage,
+});
+
+function BlogPage() {
+  useReveal();
+  return (
+    <div className="bg-forge-bg min-h-screen">
       <Navbar />
-      <PageHero title="Our Blog" crumb="Blog" />
-      <Blog />
+      <main>
+        <Blog />
+      </main>
       <Footer />
     </div>
-  ),
-});
+  );
+}

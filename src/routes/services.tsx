@@ -1,26 +1,34 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { TopBar } from "@/components/site/TopBar";
+import { useReveal } from "@/hooks/use-reveal";
 import { Navbar } from "@/components/site/Navbar";
+import { WhatIOffer } from "@/components/site/WhatIOffer";
+import { Pricing } from "@/components/site/Pricing";
+import { TrainingSplit } from "@/components/site/TrainingSplit";
 import { Footer } from "@/components/site/Footer";
-import { Services } from "@/components/site/Services";
-import { PageHero } from "./about";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Consulting." },
-      { name: "description", content: "Strategy planning, audit & evaluation, business advisory, talent, and growth marketing — engineered around your goals." },
-      { property: "og:title", content: "Services — Consulting." },
-      { property: "og:description", content: "Six core practices, one outcome: clarity, momentum, and durable growth." },
+      { title: "Training Programmes & Pricing — ForgeFit London" },
+      { name: "description", content: "Bespoke 1-to-1 personal training, transformation programmes & group sessions in East London. From £49 per session." },
+      { property: "og:title", content: "Training & Pricing — ForgeFit London" },
+      { property: "og:description", content: "Personal training, strength & conditioning, fat loss programmes in Shoreditch." },
     ],
   }),
-  component: () => (
-    <div className="min-h-screen bg-background">
-      <TopBar />
+  component: ServicesPage,
+});
+
+function ServicesPage() {
+  useReveal();
+  return (
+    <div className="bg-forge-bg min-h-screen">
       <Navbar />
-      <PageHero title="Our Services" crumb="Services" />
-      <Services />
+      <main>
+        <WhatIOffer />
+        <TrainingSplit />
+        <Pricing />
+      </main>
       <Footer />
     </div>
-  ),
-});
+  );
+}
