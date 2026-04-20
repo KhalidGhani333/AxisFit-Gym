@@ -1,0 +1,58 @@
+import { Link } from "@tanstack/react-router";
+import heroImg from "@/assets/forge-hero.jpg";
+
+export function Hero() {
+  return (
+    <section className="relative min-h-screen w-full overflow-hidden bg-forge-bg">
+      <img
+        src={heroImg}
+        alt="Ryan Forge training in a dark London gym"
+        className="absolute inset-0 h-full w-full object-cover opacity-70"
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
+      <div className="red-slash-1" />
+      <div className="red-slash-2" />
+
+      <div className="relative z-10 container mx-auto max-w-7xl px-6 min-h-screen flex items-center">
+        <div className="max-w-2xl py-32">
+          <p
+            className="label-red opacity-0 animate-[fadeUp_0.8s_ease-out_0.1s_forwards]"
+            style={{ animationFillMode: "forwards" }}
+          >
+            Based in London, UK
+          </p>
+          <h1 className="mt-6">
+            <span
+              className="block stroke-text font-display text-5xl md:text-7xl lg:text-8xl"
+              style={{ animation: "slideInLeft 0.9s cubic-bezier(0.2,0.8,0.2,1) forwards" }}
+            >
+              Hi, I'm Ryan Forge
+            </span>
+            <span
+              className="block mt-3 font-display text-white text-6xl md:text-8xl lg:text-[120px]"
+              style={{ animation: "fadeUp 0.8s ease-out 0.4s both" }}
+            >
+              Elite Personal<br />Trainer
+            </span>
+          </h1>
+          <p
+            className="mt-8 text-[#aaaaaa] text-base md:text-lg max-w-xl"
+            style={{ animation: "fadeUp 0.8s ease-out 0.6s both" }}
+          >
+            CIMSPA-Accredited · REPs Level 3 · Based in Shoreditch, East London
+          </p>
+          <div style={{ animation: "fadeUp 0.8s ease-out 0.8s both" }} className="mt-10">
+            <Link to="/services" className="btn-outline-white">
+              View My Programmes
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <style>{`
+        @keyframes slideInLeft { from { opacity: 0; transform: translateX(-60px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+      `}</style>
+    </section>
+  );
+}

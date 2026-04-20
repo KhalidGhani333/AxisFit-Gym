@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export function useReveal() {
   useEffect(() => {
@@ -20,7 +20,6 @@ export function useReveal() {
 }
 
 export function useCountUp(target: number, durationMs = 1600, start = false) {
-  const useState = (require("react") as typeof import("react")).useState;
   const [v, setV] = useState(0);
   useEffect(() => {
     if (!start) return;
@@ -36,4 +35,19 @@ export function useCountUp(target: number, durationMs = 1600, start = false) {
     return () => cancelAnimationFrame(raf);
   }, [start, target, durationMs]);
   return v;
+}
+
+export function useScrollProgress() {
+  const [p, setP] = useState(0);
+  useEffect(() => {
+    const onScroll = () => {
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      setP(max > 0 ? (h.scrollTop / max) * 100 : 0);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  return p;
 }
