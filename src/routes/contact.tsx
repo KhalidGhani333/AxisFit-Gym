@@ -57,7 +57,7 @@ function ContactPage() {
               {[
                 { Icon: MapPin, title: "Studio Location", lines: ["Unit 4, Hoxton Square Studios", "Hoxton Square, London N1 6NU"] },
                 { Icon: Phone, title: "Call or Text", lines: ["+44 (0)20 7946 0392", "+44 (0)7700 900 174"] },
-                { Icon: Mail, title: "Email", lines: ["ryan@forgefit.co.uk", "bookings@forgefit.co.uk"] },
+                { Icon: Mail, title: "Email", lines: ["hello@forgefit.co.uk", "bookings@forgefit.co.uk"] },
                 { Icon: Instagram, title: "Instagram", lines: ["@ryanforge_pt"] },
               ].map(({ Icon, title, lines }) => (
                 <div key={title} className="flex items-start gap-5">
@@ -84,3 +84,4 @@ function ContactPage() {
     </div>
   );
 }
+

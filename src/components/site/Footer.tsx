@@ -18,7 +18,7 @@ export function Footer() {
               {[Instagram, Music2, Youtube, Facebook].map((Icon, i) => (
                 <a
                   key={i}
-                  href="#"
+                  href={i === 0 ? "https://www.instagram.com/forgefit_london/" : "#"} // Update Instagram link, keep others as '#'
                   aria-label={`social-${i}`}
                   className="h-9 w-9 rounded-full border border-white/20 grid place-items-center text-white transition-colors hover:bg-forge-red hover:border-forge-red"
                 >
@@ -26,7 +26,7 @@ export function Footer() {
                 </a>
               ))}
             </div>
-            <p className="mt-4 text-[12px] text-[#666]">@ryanforge_pt</p>
+            <p className="mt-4 text-[12px] text-[#666]">@forgefit_london</p>
           </div>
 
           <div>
@@ -47,7 +47,7 @@ export function Footer() {
           <div>
             <h4 className="font-display text-lg text-white mb-5 tracking-wider">Company</h4>
             <ul className="space-y-3 text-sm text-[#aaa]">
-              {["About Ryan", "Testimonials", "Blog & Articles", "FAQs", "Privacy Policy (GDPR)"].map((l) => (
+              {["About The Forge", "Testimonials", "Blog & Articles", "FAQs", "Privacy Policy (GDPR)"].map((l) => (
                 <li key={l}>
                   <a href="#" className="hover:text-forge-red transition-colors">
                     {l}
@@ -75,13 +75,10 @@ export function Footer() {
 
         <div className="mt-16 h-px bg-forge-red/60" />
         <div className="mt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-[12px] text-[#666]">
-          <p>
-            © 2026 ForgeFit London · Ryan Forge Personal Training Ltd · Registered in England &amp; Wales No. 12458763 ·
-            VAT No. GB 345 2891 04
-          </p>
+          <p> Powered By <a href="https://axistechgroup.com/" target="_blank" rel="noopener noreferrer">AxisTechGroup</a> </p>
           <div className="flex items-center gap-3">
             {[Instagram, Music2, Youtube, Facebook].map((Icon, i) => (
-              <a key={i} href="#" aria-label={`f-social-${i}`} className="text-[#666] hover:text-forge-red transition-colors">
+              <a key={i} href={i === 0 ? "https://www.instagram.com/forgefit_london/" : "#"} aria-label={`f-social-${i}`} className="text-[#666] hover:text-forge-red transition-colors">
                 <Icon className="h-4 w-4" />
               </a>
             ))}
@@ -91,3 +88,4 @@ export function Footer() {
     </footer>
   );
 }
+

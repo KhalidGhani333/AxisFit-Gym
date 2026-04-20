@@ -8,7 +8,7 @@ export function TrainingSplit() {
       <div className="absolute hidden md:block left-1/2 top-0 bottom-0 w-px bg-forge-red z-10" />
 
       <div className="reveal-left relative min-h-[460px] flex items-center">
-        <img src={personalImg} alt="Personal training" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+        <img src={personalImg} alt="Personal training session" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
         <div className="absolute inset-0 bg-black/70" />
         <div className="relative z-10 px-8 md:px-14 py-20 max-w-xl">
           <h2 className="font-display text-white text-4xl md:text-5xl lg:text-6xl">Personal Training</h2>
@@ -20,12 +20,12 @@ export function TrainingSplit() {
       </div>
 
       <div className="reveal-right relative min-h-[460px] flex items-center">
-        <img src={groupImg} alt="Group training" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+        <img src={groupImg} alt="Group training session" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
         <div className="absolute inset-0 bg-black/70" />
         <div className="relative z-10 px-8 md:px-14 py-20 max-w-xl">
           <h2 className="font-display text-white text-4xl md:text-5xl lg:text-6xl">Group Training</h2>
           <p className="mt-5 text-[#aaaaaa] leading-relaxed">
-            High-energy small-group sessions capped at 6 people. Push harder with a motivated crew, coached by Ryan every step of the way.
+            High-energy small-group sessions capped at 6 people. Push harder with a motivated crew, coached by our expert trainers every step of the way.
           </p>
           <Link to="/services" className="btn-red mt-8">View Programmes</Link>
         </div>
