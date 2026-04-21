@@ -6,13 +6,13 @@ const posts = [
     img: blog1,
     tag: "Gym & Fitness",
     title: "Why Most Londoners Plateau After 3 Months — And How to Break Through",
-    meta: "By ForgeFit Team · 12 March 2026",
+    meta: "By Ryan Forge · 12 March 2026",
   },
   {
     img: blog2,
     tag: "Nutrition",
     title: "The Truth About Protein for Fat Loss: How Much Do You Actually Need?",
-    meta: "By ForgeFit Team · 28 February 2026",
+    meta: "By Ryan Forge · 28 February 2026",
   },
 ];
 
@@ -22,7 +22,7 @@ export function Blog() {
       <div className="container mx-auto max-w-7xl px-6">
         <div className="reveal-left text-center mb-20">
           <p className="label-red mb-4">Insights</p>
-          <h2 className="watermark-text">From The Forge</h2>
+          <h2 className="watermark-text">From the Blog</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

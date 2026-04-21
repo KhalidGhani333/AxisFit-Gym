@@ -15,8 +15,8 @@ import heroImg from "@/assets/forge-hero.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ForgeFit London — Elite Personal Trainer in Shoreditch" },
-      { name: "description", content: "ForgeFit London — CIMSPA accredited elite personal training in East London. 1-to-1 PT, transformation programmes & group training in Shoreditch, Hoxton & Bethnal Green." },
+      { title: "ForgeFit London — Elite Personal Trainer in Shoreditch | Ryan Forge" },
+      { name: "description", content: "Ryan Forge — CIMSPA accredited elite personal trainer in East London. 1-to-1 PT, transformation programmes & group training in Shoreditch, Hoxton & Bethnal Green." },
       { property: "og:title", content: "ForgeFit London — Elite Personal Trainer" },
       { property: "og:description", content: "Bespoke personal training in East London. 400+ clients, 11 years experience, results guaranteed." },
       { property: "og:image", content: heroImg },

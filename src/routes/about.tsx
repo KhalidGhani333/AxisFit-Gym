@@ -8,9 +8,9 @@ import { VideoSection } from "@/components/site/VideoSection";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About ForgeFit London — Elite Personal Trainer in London" },
-      { name: "description", content: "Meet ForgeFit London, CIMSPA-accredited PTs with 11 years' experience in East London. Level 4 Strength & Conditioning Specialists." },
-      { property: "og:title", content: "About ForgeFit London — ForgeFit London" },
+      { title: "About Ryan Forge — Elite Personal Trainer in London" },
+      { name: "description", content: "Meet Ryan Forge, CIMSPA-accredited PT with 11 years' experience in East London. Level 4 Strength & Conditioning Specialist." },
+      { property: "og:title", content: "About Ryan Forge — ForgeFit London" },
       { property: "og:description", content: "11 years coaching · 400+ clients trained · CIMSPA & REPs accredited." },
     ],
   }),
