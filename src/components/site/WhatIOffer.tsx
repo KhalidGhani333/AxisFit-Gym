@@ -26,7 +26,7 @@ export function WhatIOffer() {
       <div className="container mx-auto max-w-7xl px-6">
         <div className="reveal-left text-center mb-20">
           <p className="label-red mb-4">What I Do</p>
-          <h2 className="watermark-text">What I Offer</h2>
+          <h2 className="watermark-text" style={{ fontSize: "clamp(40px, 10vw, 100px)" }}>What I Offer</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -46,7 +46,7 @@ export function WhatIOffer() {
               </div>
               <div className="mt-6">
                 <span className="block h-[2px] w-[26px] bg-forge-red transition-all duration-300 group-hover:w-[60px]" />
-                <h3 className="mt-4 font-display text-2xl md:text-3xl text-white">{s.title}</h3>
+                <h3 className="mt-4 font-display text-lg md:text-xl text-white">{s.title}</h3>
                 <p className="mt-3 text-[#aaaaaa] leading-relaxed">{s.desc}</p>
               </div>
             </div>

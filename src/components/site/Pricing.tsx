@@ -63,7 +63,7 @@ export function Pricing() {
       <div className="container mx-auto max-w-7xl px-6">
         <div className="reveal-left text-center mb-20">
           <p className="label-red mb-4">Investment</p>
-          <h2 className="watermark-text">Pricing</h2>
+          <h2 className="watermark-text" style={{ fontSize: "clamp(40px, 10vw, 100px)" }}>Pricing</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
@@ -86,7 +86,7 @@ export function Pricing() {
                 <div className="h-12 w-12 rounded-full bg-forge-red grid place-items-center mb-6">
                   <Dumbbell className="h-6 w-6 text-white" strokeWidth={2.2} />
                 </div>
-                <h3 className="font-display text-3xl text-white">{p.name}</h3>
+                <h3 className="font-display text-xl text-white">{p.name}</h3>
                 <p className="text-[12px] uppercase tracking-[0.18em] text-[#aaaaaa] mt-2">{p.duration}</p>
 
                 <div className="mt-6 flex items-baseline gap-2">

@@ -23,14 +23,14 @@ export function VideoSection() {
           {[
             { Icon: MapPin, title: "Location", lines: ["Unit 4, Hoxton Square Studios", "Hoxton Square, London N1 6NU"] },
             { Icon: Phone, title: "Phone", lines: ["+44 (0)20 7946 0392", "+44 (0)7700 900 174"] },
-            { Icon: Mail, title: "Email", lines: ["ryan@forgefit.co.uk", "bookings@forgefit.co.uk"] },
+            { Icon: Mail, title: "Email", lines: ["ryan@axisfit.co.uk", "bookings@axisfit.co.uk"] },
           ].map(({ Icon, title, lines }, i) => (
             <div key={i} className="reveal flex items-start gap-5" style={{ ["--reveal-delay" as string]: `${i * 120}ms` }}>
               <div className="h-[52px] w-[52px] rounded-full bg-forge-red grid place-items-center shrink-0">
                 <Icon className="h-5 w-5 text-white" />
               </div>
               <div>
-                <h4 className="font-display text-xl text-white">{title}</h4>
+                <h4 className="font-display text-lg text-white">{title}</h4>
                 {lines.map((l) => (
                   <p key={l} className="text-[#aaa] text-sm mt-1">
                     {l}

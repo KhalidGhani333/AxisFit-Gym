@@ -9,10 +9,10 @@ import { Footer } from "@/components/site/Footer";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Training Programmes & Pricing — ForgeFit London" },
-      { name: "description", content: "Bespoke 1-to-1 personal training, transformation programmes & group sessions in East London. From £49 per session." },
-      { property: "og:title", content: "Training & Pricing — ForgeFit London" },
-      { property: "og:description", content: "Personal training, strength & conditioning, fat loss programmes in Shoreditch." },
+      { title: "Services & Pricing | AxisFit London - Premier Fitness" },
+      { name: "description", content: "Discover comprehensive fitness programmes, personal training, and state-of-the-art facilities at AxisFit London. Achieve your health goals with us." },
+      { property: "og:title", content: "Services & Pricing | AxisFit London" },
+      { property: "og:description", content: "AxisFit London offers expert-led fitness classes, personalised training, and premium gym facilities. Explore our services and pricing today." },
     ],
   }),
   component: ServicesPage,

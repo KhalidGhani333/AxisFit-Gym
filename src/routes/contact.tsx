@@ -7,9 +7,9 @@ import { Footer } from "@/components/site/Footer";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Book a Free Consultation — ForgeFit London | Ryan Forge PT" },
+      { title: "Book a Free Consultation — AxisFit London | Ryan Forge PT" },
       { name: "description", content: "Get in touch to book your complimentary consultation with elite London personal trainer Ryan Forge. Shoreditch · Hoxton · Bethnal Green." },
-      { property: "og:title", content: "Book Your Free Consultation — ForgeFit London" },
+      { property: "og:title", content: "Book Your Free Consultation — AxisFit London" },
       { property: "og:description", content: "Start your transformation today. First consultation is complimentary." },
     ],
   }),
@@ -57,7 +57,7 @@ function ContactPage() {
               {[
                 { Icon: MapPin, title: "Studio Location", lines: ["Unit 4, Hoxton Square Studios", "Hoxton Square, London N1 6NU"] },
                 { Icon: Phone, title: "Call or Text", lines: ["+44 (0)20 7946 0392", "+44 (0)7700 900 174"] },
-                { Icon: Mail, title: "Email", lines: ["ryan@forgefit.co.uk", "bookings@forgefit.co.uk"] },
+                { Icon: Mail, title: "Email", lines: ["ryan@axisfit.co.uk", "bookings@axisfit.co.uk"] },
                 { Icon: Instagram, title: "Instagram", lines: ["@ryanforge_pt"] },
               ].map(({ Icon, title, lines }) => (
                 <div key={title} className="flex items-start gap-5">
@@ -65,7 +65,7 @@ function ContactPage() {
                     <Icon className="h-5 w-5 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-display text-2xl text-white">{title}</h3>
+                    <h3 className="font-display text-xl text-white">{title}</h3>
                     {lines.map((l) => <p key={l} className="text-[#aaa] mt-1">{l}</p>)}
                   </div>
                 </div>

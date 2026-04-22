@@ -10,7 +10,7 @@ export const Route = createFileRoute("/about")({
     meta: [
       { title: "About Ryan Forge — Elite Personal Trainer in London" },
       { name: "description", content: "Meet Ryan Forge, CIMSPA-accredited PT with 11 years' experience in East London. Level 4 Strength & Conditioning Specialist." },
-      { property: "og:title", content: "About Ryan Forge — ForgeFit London" },
+      { property: "og:title", content: "About Ryan Forge — AxisFit London" },
       { property: "og:description", content: "11 years coaching · 400+ clients trained · CIMSPA & REPs accredited." },
     ],
   }),

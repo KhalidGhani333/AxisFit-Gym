@@ -7,9 +7,9 @@ import { Footer } from "@/components/site/Footer";
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
-      { title: "Training & Nutrition Articles — ForgeFit London Blog" },
+      { title: "Training & Nutrition Articles — AxisFit London Blog" },
       { name: "description", content: "Evidence-based fitness and nutrition insights from CIMSPA-accredited trainer Ryan Forge." },
-      { property: "og:title", content: "ForgeFit Blog — Training & Nutrition" },
+      { property: "og:title", content: "AxisFit Blog — Training & Nutrition" },
       { property: "og:description", content: "Real talk on training, nutrition, and getting results in London." },
     ],
   }),

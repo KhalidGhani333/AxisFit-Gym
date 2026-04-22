@@ -9,37 +9,32 @@ export function Hero() {
         alt="Ryan Forge training in a dark London gym"
         className="absolute inset-0 h-full w-full object-cover opacity-70"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/50 to-transparent" />
       <div className="red-slash-1" />
       <div className="red-slash-2" />
 
       <div className="relative z-10 container mx-auto max-w-7xl px-6 min-h-screen flex items-center">
-        <div className="max-w-2xl py-32">
-          <p
-            className="label-red opacity-0 animate-[fadeUp_0.8s_ease-out_0.1s_forwards]"
-            style={{ animationFillMode: "forwards" }}
-          >
-            Based in London, UK
-          </p>
+        <div className="max-w-xl py-16">
+          
           <h1 className="mt-6">
             <span
-              className="block stroke-text font-display text-5xl md:text-7xl lg:text-8xl"
+              className="block stroke-text font-display text-xl md:text-4xl lg:text-5xl"
               style={{ animation: "slideInLeft 0.9s cubic-bezier(0.2,0.8,0.2,1) forwards" }}
             >
-              Hi, I'm Ryan Forge
+              Welcome to AxisFit
             </span>
             <span
-              className="block mt-3 font-display text-white text-6xl md:text-8xl lg:text-[120px]"
+              className="block mt-3 font-display text-white text-3xl md:text-5xl lg:text-6xl"
               style={{ animation: "fadeUp 0.8s ease-out 0.4s both" }}
             >
-              Elite Personal<br />Trainer
+              Transform Your Body<br />Achieve Your Goals
             </span>
           </h1>
           <p
             className="mt-8 text-[#aaaaaa] text-base md:text-lg max-w-xl"
             style={{ animation: "fadeUp 0.8s ease-out 0.6s both" }}
           >
-            CIMSPA-Accredited · REPs Level 3 · Based in Shoreditch, East London
+            Discover a state-of-the-art fitness facility in the heart of London, offering tailored programmes for every level.
           </p>
           <div style={{ animation: "fadeUp 0.8s ease-out 0.8s both" }} className="mt-10">
             <Link to="/services" className="btn-outline-white">
@@ -56,3 +51,6 @@ export function Hero() {
     </section>
   );
 }
+
+
+

@@ -103,12 +103,11 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     color: #ffffff;
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: 0.01em;
     text-transform: uppercase;
     line-height: 0.95;
-  }
-}
+  }}
 
 @layer components {
   .font-display { font-family: var(--font-display); }
@@ -153,7 +152,7 @@
     -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.12);
     text-transform: uppercase;
     line-height: 1;
-    font-size: clamp(60px, 12vw, 160px);
+    font-size: clamp(40px, 10vw, 100px);
     letter-spacing: 0.02em;
   }
 

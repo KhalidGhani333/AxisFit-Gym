@@ -40,7 +40,7 @@ export function Navbar() {
       >
         <div className="container mx-auto max-w-7xl px-6 flex items-center justify-between h-20">
           <Link to="/" className="flex items-end gap-1">
-            <span className="font-display text-3xl tracking-wide text-white leading-none">FORGEFIT</span>
+            <span className="font-display text-3xl tracking-wide text-white leading-none">AXISFIT</span>
             <span className="h-2 w-2 bg-forge-red mb-2" />
           </Link>
 
